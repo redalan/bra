@@ -1,0 +1,128 @@
+<style>
+    /* Head Description */
+    .descriptionwrapper {
+        background: transparent;
+    }
+    .header .description {
+        font-size: var(--FONT-normalSmall);
+    }
+
+
+    /* LEFT - CENTER - RIGHT Space */
+
+    body .columns.fauxcolumns {
+        box-shadow: var(--BOXSHADOW-gen0);
+    }
+
+    /* LEFT COLUMN */
+    .main-inner .fauxcolumn-left-outer {
+        background: transparent;
+        box-shadow: var(--BOXSHADOW-gen0);
+    }
+
+    /* CENTER COLUMN */
+    .main-inner .fauxcolumn-center-outer {
+        background: transparent;
+        box-shadow: var(--BOXSHADOW-gen2);
+    }
+
+    /* RIGHT COLUMN */
+    .main-inner .fauxcolumn-right-outer {
+        background: transparent;
+        box-shadow: var(--BOXSHADOW-gen0);
+    }
+
+
+
+    /* OTHERS */
+
+    /* Date Header */
+    .date-header span {
+        background: transparent;
+        color: var(--COLOR-black2);
+    }
+
+    /* Status Msg */
+    .status-msg-wrap {
+        font-size: var(--FONT-normalSmall);
+        opacity: .5;
+    }
+
+    /* Subscribe Atoms and other */
+    .blog-feeds,
+    .post-feeds {
+        display: none;
+    }
+
+    /* Comments */
+    div#comments {
+        transform: scale(.8);
+        opacity: .8;
+    }
+
+    /* Prev Home Next */
+    div#blog-pager {
+        /* display: none; */
+        background: none;
+    }
+
+
+
+
+    /* FOOTER */
+    footer {
+        background-color: var(--COLOR-translucid);
+        color: var(--COLOR-white);
+    }
+
+    /*. COPY  */
+    .foot.section div:first-child h2,
+    .foot.section div:last-child {
+        display: none;
+    }
+    .foot.section div:first-child {
+        text-align: center;
+        font-size: var(--FONT-normalSmall);
+        color: var(--COLOR-white);
+    }
+
+    .foot.section div:first-child > a {
+        color: var(--COLOR-white);
+    }
+
+</style>
+
+<script>
+    /* pager links */
+    var pager = {
+        "back": "Back",
+        "home": "Home",
+        "next": "Next"
+    };
+</script>
+
+<script>
+    window.onload = setTimeout(function() {
+        if (pager.back > "") {
+            if (document.querySelector("a.blog-pager-newer-link")) {
+                document.querySelector("a.blog-pager-newer-link").title = "";
+                document.querySelector("a.blog-pager-newer-link").text = pager.back;
+            }
+        }
+
+        if (pager.home > "") {
+            if (document.querySelector("a.home-link")) {
+                document.querySelector("a.home-link").title = "";
+                document.querySelector("a.home-link").text = pager.home;
+            }
+        }
+
+        if (pager.next > "") {
+            if (document.querySelector("a.blog-pager-older-link")) {
+                document.querySelector("a.blog-pager-older-link").title = "";
+                document.querySelector("a.blog-pager-older-link").text = pager.next;
+            }
+        }
+
+    },500);
+</script>

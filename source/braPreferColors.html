@@ -1,0 +1,79 @@
+<div id="bra-preferColors">
+    <select onchange="braPreferColorsChange(this);">
+        <option value="0" selected>Auto</option>
+        <option value="1">Dark</option>
+        <option value="2">Light</option>
+    </select>
+</div>
+<script>
+    let braPreferColors = document.getElementById("bra-preferColors").getElementsByTagName("select")[0];
+    braPreferColors.value = braSessionPreferColors();
+    braUpdateBodyClassPreferColors(braPreferColors.value);
+
+    function braPreferColorsChange(obj) {
+        braPreferColors = obj;
+        braSessionPreferColors(obj.value);
+        braUpdateBodyClassPreferColors(obj.value);
+    };
+
+    function braSessionPreferColors(parval=3) {
+        let res = 0;
+        let pval = parseInt(parval);
+
+        if (pval<3) {
+            switch (pval) {
+                case 1:
+                    braPreferColors.value = 1;
+                    break;
+                case 2:
+                    braPreferColors.value = 2;
+                    break;
+                default:
+                    braPreferColors.value = 0;
+            }
+            if (localStorage) {
+                localStorage.braprefercolor = braPreferColors.value;
+            }
+        } else if (localStorage) {
+            switch (parseInt(localStorage.braprefercolor)) {
+                case 0:
+                    res = 0;
+                    break;
+                case 1:
+                    res = 1;
+                    break;
+                case 2:
+                    res = 2;
+                    break;
+                default:
+                    res = 0;
+
+            }
+            console.log(res);
+
+        }
+
+
+        if (pval >= 3) {
+            return res;
+        } else {
+            return 0;
+        }
+    }
+
+    function braUpdateBodyClassPreferColors(pval=0) {
+        document.body.classList.remove("light");
+        document.body.classList.remove("dark");
+        switch (parseInt(pval)) {
+            case 1:
+                document.body.classList.add("dark");
+                break;
+            case 2:
+                document.body.classList.add("light");
+                break;
+            default:
+                /* Nothing */
+
+        }
+    }
+</script>

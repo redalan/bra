@@ -1,0 +1,181 @@
+$borders: ("gen0": "0", "gen1": "1px solid var(--COLOR-black)", "gen2": "1px solid var(--COLOR-grey)","genSize1":"1px", "genSize2": "2px" ,"radius1": "5px", "radius2": "10px", "genSizeLeft": "1px 0 0 0", "genSizeRight": "0 0 0 1px", "genSizeTop":"0 1px 0 0", "genSizeBottom": "0 0 1px 0")
+
+$boxShadows: ("gen0": "none", "gen1": "rgba(0, 0, 0, 0.24) 0px 3px 8px", "gen2": "rgba(0, 0, 0, 0.35) 0px 5px 15px", "gen3": "rgb(38, 57, 77) 0px 20px 30px -10px")
+
+
+$fontSizes: ("rem":"1rem","normal":"1em", "normalbig": "1.5em", "normalSmall": ".8em", "small": ".5em", "big": "2em", "bigest": "3em")
+
+$fontSizeH: ("h1": "4em", "h2": "3em", "h3": "2em", "h4": "1.5em")
+
+$mLightColors: ("black": "black", "black2": "dimgrey", "grey": "black", "white": "white", "white2": "whitesmoke","blue":"black", "yellow": "yellow" , "red": "red", "translucid":"RGBA(0,0,0,.5)", "translucid2":"RGBA(0,0,0,.2)")
+$mDarkColors:  ("black": "white", "black2": "whitesmoke", "grey":"grey"  , "white": "black", "white2": "dimgrey","blue":"white", "yellow": "yellow", "red": "red", "translucid":"RGBA(255,255,255,.5)", "translucid2":"RGBA(255,255,255,.2)")
+
+$menuTop: ("positionType":"sticky","background": "var(--COLOR-white2)","fontColor": "var(--COLOR-black)", "border": "1px solid var(--COLOR-grey)", "boxShadow": "none","bordersOptionSize" : "0 0 0 1px", "bordersOption": "1px solid var(--COLOR-grey)", "hoverBgColor": "var(--COLOR-yellow)", "activeBgColor": "var(--COLOR-grey)", "activeTextColor": "var(--COLOR-white)","fontHeight":"1em")
+
+/* VARS */
+
+body
+  /* COLUMNS */
+  --widthColLeft: 250px
+  --displayLeft: block
+  --widthColRight: 250px
+  --displayRight: block
+
+
+  /* COLORS */
+  @each $item,$value in $mLightColors
+    --COLOR-#{$item}: #{$value}
+  @each $item,$value in $mDarkColors
+    --COLOR-#{$item}-DARK: #{$value}
+
+  /* Font Sizes Custom */
+  @each $item,$value in $fontSizes
+    --FONT-#{$item}: #{$value}
+
+  /* Font Sizes Generic */
+  @each $item,$value in $fontSizeH
+    --FONT-H-#{$item}: #{$value}
+
+  /* BORDERS */
+  @each $item,$value in $borders
+    --BORDER-#{$item}: #{$value}
+
+  /* BOX SHADOWS */
+  @each $item,$value in $boxShadows
+    --BOXSHADOW-#{$item}: #{$value}
+
+
+  /* PAGE LIST TOP (tabs-outer) */
+  @each $item,$value in $menuTop
+    --MENU-top-#{$item}: #{$value}
+
+
+  /* CUSTOMS */
+  --PRE-justify: justify
+
+
+@media (prefers-color-scheme: dark)
+  body
+    @each $item,$value in $mLightColors
+      --COLOR-#{$item}: var(--COLOR-#{$item}-DARK)
+
+body.dark
+  @each $item,$value in $mLightColors
+    --COLOR-#{$item}: var(--COLOR-#{$item}-DARK)
+
+body.light
+  @each $item,$value in $mLightColors
+    --COLOR-#{$item}: var(--COLOR-#{$item})
+
+/* ------------ */
+/* ------------ */
+/* ------------ */
+
+
+/* BASE STYLES */
+
+html, body
+  box-sizing: border-box
+  width: 100%
+  min-width: 200px
+  max-width: unset
+  font-size: var(--FONT-rem)
+  color: var(--COLOR-black)
+  background-color: var(--COLOR-white)
+
+body
+  div.widget > h2,
+  div.widget h2.title,
+  .Header h1,
+  .header .description
+    color: inherit
+
+  .content-outer
+    width: 100%
+
+  .content-inner
+    background: transparent
+
+  .content-outer,
+  .content-fauxcolumn-outer,
+  .region-inner
+    min-width: unset
+    max-width: unset
+
+  .home-link
+    background: transparent
+    color: var(--COLOR-black2)
+    font-size: var(--FONT-small)
+
+  pre
+    white-space: pre-wrap
+    font-family: inherit
+    text-align: var(--PRE-justify)
+
+  @each $item,$value in $fontSizeH
+    #{$item}
+      font-size: #{$value}
+
+  .main-inner .column-left-outer
+    display: var(--displayLeft)
+    width: var(--widthColLeft)
+    right: 100%
+    margin-left: calc(var(--widthColLeft)*-1)
+
+
+  .main-inner .column-right-outer
+    display: var(--displayRight)
+    width: var(--widthColRight)
+    margin-right: calc(var(--widthColRight)*-1)
+
+  .main-inner .columns
+    padding-left: var(--widthColLeft)
+    padding-right: var(--widthColRight)
+
+  .main-inner .fauxcolumn-center-outer
+    left: var(--widthColLeft)
+    right: var(--widthColRight)
+
+  #main > .widget.HTML > h2.title
+    display: none
+
+  .status-msg-bg,
+  .status-msg-border
+    all: unset
+
+  /* MENU TOP PAGE LIST */
+  div.tabs-outer
+    top: 0
+    position: var(--MENU-top-positionType)
+    background-color: unset
+    background: var(--MENU-top-background)
+    box-shadow: var(--MENU-top-boxShadow)
+    z-index: 900
+
+    & .tabs-inner .section:first-child ul
+        border: 0
+        margin-top: 0
+
+    & .tabs-inner
+      border: var(--MENU-top-border)
+
+      & li
+          border-top: unset
+          border-right: unset
+          border-left: unset
+          border-bottom: unset
+          vertical-align: middle
+
+          & a
+            color: var(--MENU-top-fontColor)
+            border: var(--MENU-top-bordersOption)
+            border-width: var(--MENU-top-bordersOptionSize)
+            font-size: var(--MENU-top-fontHeight)
+          & a:hover
+            background-color: var(--MENU-top-hoverBgColor)
+      & li.selected a
+        background-color: var(--MENU-top-activeBgColor)
+        color: var(--MENU-top-activeTextColor)
+
+
+
