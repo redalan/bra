@@ -1,0 +1,76 @@
+// BRA v01 (cc) Redalan Net
+// Sass vars template 01
+
+
+$borders: ("gen0": "0", "gen1": "1px solid var(--COLOR-black)", "gen2": "1px solid var(--COLOR-grey)","genSize1":"1px", "genSize2": "2px" ,"radius1": "5px", "radius2": "10px", "genSizeLeft": "1px 0 0 0", "genSizeRight": "0 0 0 1px", "genSizeTop":"0 1px 0 0", "genSizeBottom": "0 0 1px 0")
+
+$boxShadows: ("gen0": "none", "gen1": "rgba(0, 0, 0, 0.24) 0px 3px 8px", "gen2": "rgba(0, 0, 0, 0.35) 0px 5px 15px", "gen3": "rgb(38, 57, 77) 0px 20px 30px -10px")
+
+
+$fontSizes: ("rem":"1rem","normal":"1em", "normalbig": "1.5em", "normalSmall": ".8em", "small": ".5em", "big": "2em", "bigest": "3em")
+
+$fontSizeH: ("h1": "4em", "h2": "3em", "h3": "2em", "h4": "1.5em")
+
+$mLightColors: ("black": "black", "black2": "dimgrey", "grey": "black", "white": "white", "white2": "whitesmoke","blue":"black", "yellow": "yellow" , "red": "red", "translucid":"RGBA(0,0,0,.5)", "translucid2":"RGBA(0,0,0,.2)")
+$mDarkColors:  ("black": "white", "black2": "whitesmoke", "grey":"grey"  , "white": "black", "white2": "dimgrey","blue":"white", "yellow": "yellow", "red": "red", "translucid":"RGBA(255,255,255,.5)", "translucid2":"RGBA(255,255,255,.2)")
+
+$menuTop: ("positionType":"sticky","background": "var(--COLOR-white2)","fontColor": "var(--COLOR-black)", "border": "1px solid var(--COLOR-grey)", "boxShadow": "none","bordersOptionSize" : "0 0 0 1px", "bordersOption": "1px solid var(--COLOR-grey)", "hoverBgColor": "var(--COLOR-yellow)", "activeBgColor": "var(--COLOR-grey)", "activeTextColor": "var(--COLOR-white)","fontHeight":"1em")
+
+/* VARS */
+
+body
+  /* COLUMNS */
+  --widthColLeft: 250px
+  --displayLeft: block
+  --widthColRight: 250px
+  --displayRight: block
+
+
+  /* COLORS */
+  @each $item,$value in $mLightColors
+    --COLOR-#{$item}: #{$value}
+  @each $item,$value in $mDarkColors
+    --COLOR-#{$item}-DARK: #{$value}
+
+  /* Font Sizes Custom */
+  @each $item,$value in $fontSizes
+    --FONT-#{$item}: #{$value}
+
+  /* Font Sizes Generic */
+  @each $item,$value in $fontSizeH
+    --FONT-H-#{$item}: #{$value}
+
+  /* BORDERS */
+  @each $item,$value in $borders
+    --BORDER-#{$item}: #{$value}
+
+  /* BOX SHADOWS */
+  @each $item,$value in $boxShadows
+    --BOXSHADOW-#{$item}: #{$value}
+
+
+  /* PAGE LIST TOP (tabs-outer) */
+  @each $item,$value in $menuTop
+    --MENU-top-#{$item}: #{$value}
+
+
+  /* CUSTOMS */
+  --PRE-justify: justify
+
+
+@media (prefers-color-scheme: dark)
+  body
+    @each $item,$value in $mLightColors
+      --COLOR-#{$item}: var(--COLOR-#{$item}-DARK)
+
+body.dark
+  @each $item,$value in $mLightColors
+    --COLOR-#{$item}: var(--COLOR-#{$item}-DARK)
+
+body.light
+  @each $item,$value in $mLightColors
+    --COLOR-#{$item}: var(--COLOR-#{$item})
+
+/* ------------ */
+/* ------------ */
+/* ------------ */

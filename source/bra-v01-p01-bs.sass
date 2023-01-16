@@ -1,0 +1,127 @@
+// BRA v01 (cc) Redalan Net
+// Sass BS template 01
+
+/* BASE STYLES */
+
+html, body
+  box-sizing: border-box
+  width: 100%
+  min-width: 200px
+  max-width: unset
+  font-size: var(--FONT-rem)
+  color: var(--COLOR-black)
+  background-color: var(--COLOR-white)
+
+body
+  div.widget > h2,
+  div.widget h2.title,
+  .Header h1,
+  .header .description
+    color: inherit
+
+  .content-outer
+    width: 100%
+
+  .content-inner
+    background: transparent
+
+  .content-outer,
+  .content-fauxcolumn-outer,
+  .region-inner
+    min-width: unset
+    max-width: unset
+
+  .home-link
+    background: transparent
+    color: var(--COLOR-black2)
+    font-size: var(--FONT-small)
+
+  pre
+    white-space: pre-wrap
+    font-family: inherit
+    text-align: var(--PRE-justify)
+
+  @each $item,$value in $fontSizeH
+    #{$item}
+      font-size: #{$value}
+
+  .main-inner .column-left-outer
+    display: var(--displayLeft)
+    width: var(--widthColLeft)
+    right: 100%
+    margin-left: calc(var(--widthColLeft)*-1)
+
+
+  .main-inner .column-right-outer
+    display: var(--displayRight)
+    width: var(--widthColRight)
+    margin-right: calc(var(--widthColRight)*-1)
+
+  .main-inner .columns
+    padding-left: var(--widthColLeft)
+    padding-right: var(--widthColRight)
+
+  .main-inner .fauxcolumn-center-outer
+    left: var(--widthColLeft)
+    right: var(--widthColRight)
+
+  #main > .widget.HTML > h2.title
+    display: none
+
+  .status-msg-bg,
+  .status-msg-border
+    all: unset
+
+  /* MENU TOP PAGE LIST */
+  div.tabs-outer
+    top: 0
+    position: var(--MENU-top-positionType)
+    background-color: unset
+    background: var(--MENU-top-background)
+    box-shadow: var(--MENU-top-boxShadow)
+    z-index: 900
+
+    & .tabs-inner .section:first-child ul
+      border: 0
+      margin-top: 0
+
+    & .tabs-inner
+      border: var(--MENU-top-border)
+
+      & li
+        border-top: unset
+        border-right: unset
+        border-left: unset
+        border-bottom: unset
+        vertical-align: middle
+
+        & a
+          color: var(--MENU-top-fontColor)
+          border: var(--MENU-top-bordersOption)
+          border-width: var(--MENU-top-bordersOptionSize)
+          font-size: var(--MENU-top-fontHeight)
+        & a:hover
+          background-color: var(--MENU-top-hoverBgColor)
+      & li.selected a
+        background-color: var(--MENU-top-activeBgColor)
+        color: var(--MENU-top-activeTextColor)
+
+  /* BRA CLASSES: Checkboxes */
+  input.slider[type=checkbox]
+    visibility: hidden
+    & + label
+      border-radius: 5px
+      border: 1px solid black
+      background-image: linear-gradient(90deg, white 12%,grey 12%)
+      color: white
+      padding: .2em 1em .2em 1em
+      cursor: pointer
+    &:checked + label
+      background-image: linear-gradient(90deg, green 88%,white 88%)
+      &.blue
+        background-image: linear-gradient(90deg, blue 88%,white 88%)
+      &.red
+        background-image: linear-gradient(90deg, red 88%,white 88%)
+      &.yellow
+        color: black
+        background-image: linear-gradient(90deg, yellow 88%,white 88%)
