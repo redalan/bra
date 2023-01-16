@@ -1,0 +1,119 @@
+/* VARS */
+body {
+  /* COLUMNS */
+  --widthColLeft: 250px;
+  --displayLeft: block;
+  --widthColRight: 250px;
+  --displayRight: block;
+  /* COLORS */
+  --COLOR-black: black;
+  --COLOR-black2: dimgrey;
+  --COLOR-grey: black;
+  --COLOR-white: white;
+  --COLOR-white2: whitesmoke;
+  --COLOR-blue: black;
+  --COLOR-yellow: yellow;
+  --COLOR-red: red;
+  --COLOR-translucid: RGBA(0,0,0,.5);
+  --COLOR-translucid2: RGBA(0,0,0,.2);
+  --COLOR-black-DARK: white;
+  --COLOR-black2-DARK: whitesmoke;
+  --COLOR-grey-DARK: grey;
+  --COLOR-white-DARK: black;
+  --COLOR-white2-DARK: dimgrey;
+  --COLOR-blue-DARK: white;
+  --COLOR-yellow-DARK: yellow;
+  --COLOR-red-DARK: red;
+  --COLOR-translucid-DARK: RGBA(255,255,255,.5);
+  --COLOR-translucid2-DARK: RGBA(255,255,255,.2);
+  /* Font Sizes Custom */
+  --FONT-rem: 1rem;
+  --FONT-normal: 1em;
+  --FONT-normalbig: 1.5em;
+  --FONT-normalSmall: .8em;
+  --FONT-small: .5em;
+  --FONT-big: 2em;
+  --FONT-bigest: 3em;
+  /* Font Sizes Generic */
+  --FONT-H-h1: 4em;
+  --FONT-H-h2: 3em;
+  --FONT-H-h3: 2em;
+  --FONT-H-h4: 1.5em;
+  /* BORDERS */
+  --BORDER-gen0: 0;
+  --BORDER-gen1: 1px solid var(--COLOR-black);
+  --BORDER-gen2: 1px solid var(--COLOR-grey);
+  --BORDER-genSize1: 1px;
+  --BORDER-genSize2: 2px;
+  --BORDER-radius1: 5px;
+  --BORDER-radius2: 10px;
+  --BORDER-genSizeLeft: 1px 0 0 0;
+  --BORDER-genSizeRight: 0 0 0 1px;
+  --BORDER-genSizeTop: 0 1px 0 0;
+  --BORDER-genSizeBottom: 0 0 1px 0;
+  /* BOX SHADOWS */
+  --BOXSHADOW-gen0: none;
+  --BOXSHADOW-gen1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --BOXSHADOW-gen2: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --BOXSHADOW-gen3: rgb(38, 57, 77) 0px 20px 30px -10px;
+  /* PAGE LIST TOP (tabs-outer) */
+  --MENU-top-positionType: sticky;
+  --MENU-top-background: var(--COLOR-white2);
+  --MENU-top-fontColor: var(--COLOR-black);
+  --MENU-top-border: 1px solid var(--COLOR-grey);
+  --MENU-top-boxShadow: none;
+  --MENU-top-bordersOptionSize: 0 0 0 1px;
+  --MENU-top-bordersOption: 1px solid var(--COLOR-grey);
+  --MENU-top-hoverBgColor: var(--COLOR-yellow);
+  --MENU-top-activeBgColor: var(--COLOR-grey);
+  --MENU-top-activeTextColor: var(--COLOR-white);
+  --MENU-top-fontHeight: 1em;
+  /* CUSTOMS */
+  --PRE-justify: justify;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --COLOR-black: var(--COLOR-black-DARK);
+    --COLOR-black2: var(--COLOR-black2-DARK);
+    --COLOR-grey: var(--COLOR-grey-DARK);
+    --COLOR-white: var(--COLOR-white-DARK);
+    --COLOR-white2: var(--COLOR-white2-DARK);
+    --COLOR-blue: var(--COLOR-blue-DARK);
+    --COLOR-yellow: var(--COLOR-yellow-DARK);
+    --COLOR-red: var(--COLOR-red-DARK);
+    --COLOR-translucid: var(--COLOR-translucid-DARK);
+    --COLOR-translucid2: var(--COLOR-translucid2-DARK);
+  }
+}
+body.dark {
+  --COLOR-black: var(--COLOR-black-DARK);
+  --COLOR-black2: var(--COLOR-black2-DARK);
+  --COLOR-grey: var(--COLOR-grey-DARK);
+  --COLOR-white: var(--COLOR-white-DARK);
+  --COLOR-white2: var(--COLOR-white2-DARK);
+  --COLOR-blue: var(--COLOR-blue-DARK);
+  --COLOR-yellow: var(--COLOR-yellow-DARK);
+  --COLOR-red: var(--COLOR-red-DARK);
+  --COLOR-translucid: var(--COLOR-translucid-DARK);
+  --COLOR-translucid2: var(--COLOR-translucid2-DARK);
+}
+
+body.light {
+  --COLOR-black: var(--COLOR-black);
+  --COLOR-black2: var(--COLOR-black2);
+  --COLOR-grey: var(--COLOR-grey);
+  --COLOR-white: var(--COLOR-white);
+  --COLOR-white2: var(--COLOR-white2);
+  --COLOR-blue: var(--COLOR-blue);
+  --COLOR-yellow: var(--COLOR-yellow);
+  --COLOR-red: var(--COLOR-red);
+  --COLOR-translucid: var(--COLOR-translucid);
+  --COLOR-translucid2: var(--COLOR-translucid2);
+}
+
+/* ------------ */
+/* ------------ */
+/* ------------ */
+
+/*# sourceMappingURL=bra-v01-p01-vars.css.map */

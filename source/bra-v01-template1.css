@@ -1,0 +1,259 @@
+/* VARS */
+body {
+  /* COLUMNS */
+  --widthColLeft: 250px;
+  --displayLeft: block;
+  --widthColRight: 250px;
+  --displayRight: block;
+  /* COLORS */
+  --COLOR-black: black;
+  --COLOR-black2: dimgrey;
+  --COLOR-grey: black;
+  --COLOR-white: white;
+  --COLOR-white2: whitesmoke;
+  --COLOR-blue: black;
+  --COLOR-yellow: yellow;
+  --COLOR-red: red;
+  --COLOR-translucid: RGBA(0,0,0,.5);
+  --COLOR-translucid2: RGBA(0,0,0,.2);
+  --COLOR-black-DARK: white;
+  --COLOR-black2-DARK: whitesmoke;
+  --COLOR-grey-DARK: grey;
+  --COLOR-white-DARK: black;
+  --COLOR-white2-DARK: dimgrey;
+  --COLOR-blue-DARK: white;
+  --COLOR-yellow-DARK: yellow;
+  --COLOR-red-DARK: red;
+  --COLOR-translucid-DARK: RGBA(255,255,255,.5);
+  --COLOR-translucid2-DARK: RGBA(255,255,255,.2);
+  /* Font Sizes Custom */
+  --FONT-rem: 1rem;
+  --FONT-normal: 1em;
+  --FONT-normalbig: 1.5em;
+  --FONT-normalSmall: .8em;
+  --FONT-small: .5em;
+  --FONT-big: 2em;
+  --FONT-bigest: 3em;
+  /* Font Sizes Generic */
+  --FONT-H-h1: 4em;
+  --FONT-H-h2: 3em;
+  --FONT-H-h3: 2em;
+  --FONT-H-h4: 1.5em;
+  /* BORDERS */
+  --BORDER-gen0: 0;
+  --BORDER-gen1: 1px solid var(--COLOR-black);
+  --BORDER-gen2: 1px solid var(--COLOR-grey);
+  --BORDER-genSize1: 1px;
+  --BORDER-genSize2: 2px;
+  --BORDER-radius1: 5px;
+  --BORDER-radius2: 10px;
+  --BORDER-genSizeLeft: 1px 0 0 0;
+  --BORDER-genSizeRight: 0 0 0 1px;
+  --BORDER-genSizeTop: 0 1px 0 0;
+  --BORDER-genSizeBottom: 0 0 1px 0;
+  /* BOX SHADOWS */
+  --BOXSHADOW-gen0: none;
+  --BOXSHADOW-gen1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --BOXSHADOW-gen2: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --BOXSHADOW-gen3: rgb(38, 57, 77) 0px 20px 30px -10px;
+  /* PAGE LIST TOP (tabs-outer) */
+  --MENU-top-positionType: sticky;
+  --MENU-top-background: var(--COLOR-white2);
+  --MENU-top-fontColor: var(--COLOR-black);
+  --MENU-top-border: 1px solid var(--COLOR-grey);
+  --MENU-top-boxShadow: none;
+  --MENU-top-bordersOptionSize: 0 0 0 1px;
+  --MENU-top-bordersOption: 1px solid var(--COLOR-grey);
+  --MENU-top-hoverBgColor: var(--COLOR-yellow);
+  --MENU-top-activeBgColor: var(--COLOR-grey);
+  --MENU-top-activeTextColor: var(--COLOR-white);
+  --MENU-top-fontHeight: 1em;
+  /* CUSTOMS */
+  --PRE-justify: justify;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --COLOR-black: var(--COLOR-black-DARK);
+    --COLOR-black2: var(--COLOR-black2-DARK);
+    --COLOR-grey: var(--COLOR-grey-DARK);
+    --COLOR-white: var(--COLOR-white-DARK);
+    --COLOR-white2: var(--COLOR-white2-DARK);
+    --COLOR-blue: var(--COLOR-blue-DARK);
+    --COLOR-yellow: var(--COLOR-yellow-DARK);
+    --COLOR-red: var(--COLOR-red-DARK);
+    --COLOR-translucid: var(--COLOR-translucid-DARK);
+    --COLOR-translucid2: var(--COLOR-translucid2-DARK);
+  }
+}
+body.dark {
+  --COLOR-black: var(--COLOR-black-DARK);
+  --COLOR-black2: var(--COLOR-black2-DARK);
+  --COLOR-grey: var(--COLOR-grey-DARK);
+  --COLOR-white: var(--COLOR-white-DARK);
+  --COLOR-white2: var(--COLOR-white2-DARK);
+  --COLOR-blue: var(--COLOR-blue-DARK);
+  --COLOR-yellow: var(--COLOR-yellow-DARK);
+  --COLOR-red: var(--COLOR-red-DARK);
+  --COLOR-translucid: var(--COLOR-translucid-DARK);
+  --COLOR-translucid2: var(--COLOR-translucid2-DARK);
+}
+
+body.light {
+  --COLOR-black: var(--COLOR-black);
+  --COLOR-black2: var(--COLOR-black2);
+  --COLOR-grey: var(--COLOR-grey);
+  --COLOR-white: var(--COLOR-white);
+  --COLOR-white2: var(--COLOR-white2);
+  --COLOR-blue: var(--COLOR-blue);
+  --COLOR-yellow: var(--COLOR-yellow);
+  --COLOR-red: var(--COLOR-red);
+  --COLOR-translucid: var(--COLOR-translucid);
+  --COLOR-translucid2: var(--COLOR-translucid2);
+}
+
+/* ------------ */
+/* ------------ */
+/* ------------ */
+/* BASE STYLES */
+html, body {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 200px;
+  max-width: unset;
+  font-size: var(--FONT-rem);
+  color: var(--COLOR-black);
+  background-color: var(--COLOR-white);
+}
+
+body {
+  /* MENU TOP PAGE LIST */
+  /* BRA CLASSES: Checkboxes */
+}
+body div.widget > h2,
+body div.widget h2.title,
+body .Header h1,
+body .header .description {
+  color: inherit;
+}
+body .content-outer {
+  width: 100%;
+}
+body .content-inner {
+  background: transparent;
+}
+body .content-outer,
+body .content-fauxcolumn-outer,
+body .region-inner {
+  min-width: unset;
+  max-width: unset;
+}
+body .home-link {
+  background: transparent;
+  color: var(--COLOR-black2);
+  font-size: var(--FONT-small);
+}
+body pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+  text-align: var(--PRE-justify);
+}
+body h1 {
+  font-size: 4em;
+}
+body h2 {
+  font-size: 3em;
+}
+body h3 {
+  font-size: 2em;
+}
+body h4 {
+  font-size: 1.5em;
+}
+body .main-inner .column-left-outer {
+  display: var(--displayLeft);
+  width: var(--widthColLeft);
+  right: 100%;
+  margin-left: calc(var(--widthColLeft) * -1);
+}
+body .main-inner .column-right-outer {
+  display: var(--displayRight);
+  width: var(--widthColRight);
+  margin-right: calc(var(--widthColRight) * -1);
+}
+body .main-inner .columns {
+  padding-left: var(--widthColLeft);
+  padding-right: var(--widthColRight);
+}
+body .main-inner .fauxcolumn-center-outer {
+  left: var(--widthColLeft);
+  right: var(--widthColRight);
+}
+body #main > .widget.HTML > h2.title {
+  display: none;
+}
+body .status-msg-bg,
+body .status-msg-border {
+  all: unset;
+}
+body div.tabs-outer {
+  top: 0;
+  position: var(--MENU-top-positionType);
+  background-color: unset;
+  background: var(--MENU-top-background);
+  box-shadow: var(--MENU-top-boxShadow);
+  z-index: 900;
+}
+body div.tabs-outer .tabs-inner .section:first-child ul {
+  border: 0;
+  margin-top: 0;
+}
+body div.tabs-outer .tabs-inner {
+  border: var(--MENU-top-border);
+}
+body div.tabs-outer .tabs-inner li {
+  border-top: unset;
+  border-right: unset;
+  border-left: unset;
+  border-bottom: unset;
+  vertical-align: middle;
+}
+body div.tabs-outer .tabs-inner li a {
+  color: var(--MENU-top-fontColor);
+  border: var(--MENU-top-bordersOption);
+  border-width: var(--MENU-top-bordersOptionSize);
+  font-size: var(--MENU-top-fontHeight);
+}
+body div.tabs-outer .tabs-inner li a:hover {
+  background-color: var(--MENU-top-hoverBgColor);
+}
+body div.tabs-outer .tabs-inner li.selected a {
+  background-color: var(--MENU-top-activeBgColor);
+  color: var(--MENU-top-activeTextColor);
+}
+body input.slider[type=checkbox] {
+  visibility: hidden;
+}
+body input.slider[type=checkbox] + label {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-image: linear-gradient(90deg, white 12%, grey 12%);
+  color: white;
+  padding: 0.2em 1em 0.2em 1em;
+  cursor: pointer;
+}
+body input.slider[type=checkbox]:checked + label {
+  background-image: linear-gradient(90deg, green 88%, white 88%);
+}
+body input.slider[type=checkbox]:checked + label.blue {
+  background-image: linear-gradient(90deg, blue 88%, white 88%);
+}
+body input.slider[type=checkbox]:checked + label.red {
+  background-image: linear-gradient(90deg, red 88%, white 88%);
+}
+body input.slider[type=checkbox]:checked + label.yellow {
+  color: black;
+  background-image: linear-gradient(90deg, yellow 88%, white 88%);
+}
+
+/*# sourceMappingURL=bra-v01-template1.css.map */
